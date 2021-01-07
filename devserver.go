@@ -11,8 +11,10 @@ const (
 
 func main() {
 	fmt.Println("Listening on", listen)
-	http.ListenAndServe(
-		listen, 
-		http.FileServer(http.Dir("./webroot")),
+	panic(
+		http.ListenAndServe(
+			listen, 
+			http.FileServer(http.Dir("./webroot")),
+		),
 	)
 }
